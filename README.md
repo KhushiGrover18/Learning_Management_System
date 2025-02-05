@@ -1,1 +1,1 @@
-Basis practice of HTML, CSS and JavaScrpit
+Basis practice of HTML, CSS and JavaScrpit.

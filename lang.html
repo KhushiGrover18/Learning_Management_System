@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Languages</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #007bff;
+            text-align: center;
+        }
+
+        .language-list {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .language-list button {
+            padding: 10px 20px;
+            font-size: 1rem;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .language-list button:hover {
+            background-color: #0056b3;
+        }
+
+        .description {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .description h2 {
+            color: #333;
+        }
+
+        .description p {
+            font-size: 1rem;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <h1>Languages</h1>
+    <ul class="language-list">
+        <button onclick="showDescription('Python')">Python</button>
+        <button onclick="showDescription('C')">C</button>
+        <button onclick="showDescription('C++')">C++</button>
+        <button onclick="showDescription('Java')">Java</button>
+        <button onclick="showDescription('JavaScript')">JavaScript</button>
+    </ul>
+    <div class="description">
+        <h2 id="language-title">Select a Language</h2>
+        <p id="language-description">Click on a language to learn more about it.</p>
+    </div>
+
+    <script>
+        function showDescription(language) {
+            const descriptions = {
+                'Python': 'Python is a versatile, high-level programming language known for its readability and ease of use. It is widely used in data science, machine learning, web development, and automation.',
+                'C': 'C is a powerful, low-level programming language that is widely used for system programming, embedded systems, and performance-critical applications.',
+                'C++': 'C++ is an extension of C that adds object-oriented features. It is commonly used in game development, large-scale applications, and performance-critical tasks.',
+                'Java': 'Java is a versatile, platform-independent programming language used for building web applications, Android apps, and enterprise software.',
+                'JavaScript': 'JavaScript is a dynamic, high-level scripting language that powers interactive features on websites and is widely used in web development.'
+            };
+
+            document.getElementById('language-title').textContent = language;
+            document.getElementById('language-description').textContent = descriptions[language];
+        }
+    </script>
+</body>
+</html>

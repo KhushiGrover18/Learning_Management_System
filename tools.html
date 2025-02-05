@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tools</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #007bff;
+            text-align: center;
+        }
+
+        .tool-list {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .tool-list button {
+            padding: 10px 20px;
+            font-size: 1rem;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .tool-list button:hover {
+            background-color: #0056b3;
+        }
+
+        .description {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .description h2 {
+            color: #333;
+        }
+
+        .description p {
+            font-size: 1rem;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <h1>Tools</h1>
+    <ul class="tool-list">
+        <button onclick="showDescription('Selenium')">Selenium</button>
+        <button onclick="showDescription('Docker')">Docker</button>
+        <button onclick="showDescription('Kubernetes')">Kubernetes</button>
+        <button onclick="showDescription('AWS')">AWS</button>
+        <button onclick="showDescription('Azure')">Azure</button>
+        <button onclick="showDescription('GCP')">GCP</button>
+        <button onclick="showDescription('Jenkins')">Jenkins</button>
+        <button onclick="showDescription('Maven')">Maven</button>
+    </ul>
+    <div class="description">
+        <h2 id="tool-title">Select a Tool</h2>
+        <p id="tool-description">Click on a tool to learn more about it.</p>
+    </div>
+
+    <script>
+        function showDescription(tool) {
+            const descriptions = {
+                'Selenium': 'Selenium is an open-source automation testing framework for validating web applications across different browsers and platforms.',
+                'Docker': 'Docker is a platform for developing, shipping, and running applications in lightweight, portable containers.',
+                'Kubernetes': 'Kubernetes is an open-source system for automating the deployment, scaling, and management of containerized applications.',
+                'AWS': 'AWS (Amazon Web Services) is a comprehensive cloud computing platform offering a wide range of services for computing, storage, and networking.',
+                'Azure': 'Azure is Microsoft’s cloud computing platform that provides a suite of services, including virtual machines, AI, and analytics.',
+                'GCP': 'GCP (Google Cloud Platform) is Google’s cloud computing suite, offering scalable services for developers and enterprises.',
+                'Jenkins': 'Jenkins is an open-source automation server that enables continuous integration and delivery of software projects.',
+                'Maven': 'Maven is a build automation tool primarily used for Java projects, helping manage dependencies and project lifecycle.'
+            };
+
+            document.getElementById('tool-title').textContent = tool;
+            document.getElementById('tool-description').textContent = descriptions[tool];
+        }
+    </script>
+</body>
+</html>

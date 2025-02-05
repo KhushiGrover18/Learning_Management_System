@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courses</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f4f4f9;
+        }
+
+        h1 {
+            color: #007bff;
+        }
+
+        .button-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .button-container button {
+            padding: 15px 30px;
+            font-size: 1rem;
+            color: white;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .button-container button:hover {
+            background-color: #0056b3;
+        }
+
+        .description {
+            margin-top: 30px;
+            padding: 20px;
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            text-align: center;
+            display: none; /* Hidden by default */
+        }
+    </style>
+</head>
+<body>
+    <h1>Explore Courses</h1>
+    <div class="button-container">
+        <button onclick="showDescription('Test Automation', 'Learn how to automate testing processes with tools like Selenium and frameworks like TestNG and JUnit.')">
+            Test Automation
+        </button>
+        <button onclick="showDescription('Cyber Security', 'Dive into the world of cybersecurity, including penetration testing, threat detection, and secure coding.')">
+            Cyber Security
+        </button>
+        <button onclick="showDescription('Software Testing', 'Master manual and automated testing techniques, including QA processes, bug tracking, and Agile testing.')">
+            Software Testing
+        </button>
+        <button onclick="showDescription('Data Analysis', 'Analyze data effectively using tools like Excel, Python, and R, and visualize it using Tableau and Power BI.')">
+            Data Analysis
+        </button>
+        <button onclick="showDescription('Data Structure', 'Understand the fundamentals of data structures like arrays, linked lists, trees, and graphs.')">
+            Data Structure
+        </button>
+        <button onclick="showDescription('Computer Network', 'Learn about network protocols, routing, IP addressing, and the OSI model in computer networking.')">
+            Computer Network
+        </button>
+    </div>
+
+    <div class="description" id="description-box"></div>
+
+    <script>
+        function showDescription(courseName, courseDescription) {
+            const descriptionBox = document.getElementById('description-box');
+            descriptionBox.style.display = 'block';
+            descriptionBox.innerHTML = `<h2>${courseName}</h2><p>${courseDescription}</p>`;
+        }
+    </script>
+</body>
+</html>
